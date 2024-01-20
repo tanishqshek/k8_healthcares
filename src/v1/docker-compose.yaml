@@ -1,0 +1,8 @@
+services:
+  health_cares_v1:
+    build: ./health_cares_v1
+    container_name: health_container_v1
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true

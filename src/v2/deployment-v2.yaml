@@ -1,0 +1,19 @@
+apiVersion: health-cares/v2
+kind: Deployment
+metadata:
+  name: health-cares-deploy-v2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: health-cares-deploy
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: health-cares-deploy
+        version: v2
+    spec:
+      containers:
+        - name: health-cares-deploy
+          image: health-cares-deploy:v2

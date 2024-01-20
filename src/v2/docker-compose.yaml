@@ -1,0 +1,11 @@
+services:
+  health_cares_v2:
+    build: ./health_cares_v2
+    container_name: health_container_v2
+    ports:
+      - '4000:4000'
+    stdin_open: true
+    tty: true
+    # volumes:
+    #   - ./health_cares_v1:/app
+    #   - ./app/node_modules

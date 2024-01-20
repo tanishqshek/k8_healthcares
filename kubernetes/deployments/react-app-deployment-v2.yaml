@@ -1,0 +1,23 @@
+# deployments/react-app-deployment-v1.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-app-v2
+spec:
+  replicas: 1  # Number of desired replicas (adjust as needed)
+  selector:
+    matchLabels:
+      app: react-app
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: react-app
+        version: v2
+    spec:
+      containers:
+      - name: react-app
+        image: my-registry/my-react-app:v2  # Docker image for v1
+        ports:
+        - containerPort: 80
